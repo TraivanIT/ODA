@@ -1,0 +1,68 @@
+{% extends 'pages/main.html'%}
+{% load static %}
+{% block content%}
+<div class="donate mt-2">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-12">
+      <div class="donate-img-inner d-flex justify-content-center ">
+        <h1 class="text-muted text-center">Donate</h1>
+      </div><!--img-donate-->
+    </div><!--lg-12-->
+  </div><!--row-->
+
+  <div class="row mt-2">
+    <div class="col-lg-12 col-md-12 col-12">
+      <div class="donate-amount-inner shadow-sm rounded p-5 bg-white">
+        <h5 class="text-center text-danger font-weight-bold">SELECT YOUR DONATION AMOUNT</h5>
+        <p class="text-center">Any amount helps our students  so please select the amount you prefer.  Please note Paypal takes in $USD so adjust your donation accordingly.
+           We are especially very grateful for recurring monthly donations of any amount.</p>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="donate-button  d-flex justify-content-center">
+              <a href="#" class="btn btn-outline-danger btn-block mt-2 btn-lg py-3 " type="button" role="button">$20</a>
+              </div>
+            </div>
+
+          <div class="col-md-3">
+            <div class="donate-button  d-flex justify-content-center">
+              <a href="#" class="btn btn-outline-danger btn-block mt-2  btn-lg py-3 " type="button" role="button">$50</a>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="donate-button  d-flex justify-content-center">
+              <a href="#" class="btn btn-outline-danger btn-block mt-2  btn-lg py-3" type="button" role="button">$100</a>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="donate-button  d-flex justify-content-center">
+              <a href="#" class="btn btn-outline-danger btn-block mt-2  btn-lg py-3" type="button" role="button">options</a>
+            </div>
+          </div>
+        </div><!--row-->
+
+
+        <div class=" d-flex justify-content-center mt-4">
+              <a href="#" class="btn btn-primary  text-uppercase">get Involed today</a>
+        </div>
+
+
+
+      
+              {%for text in donate_texts %}
+                {{text.donate_text|safe}}
+              {% endfor %}
+
+
+        <div class="row">
+          <div class="donate-thanks">
+            <img src="{%static 'images/thanks.jpg'%}" alt="" width="100%">
+          </div>
+        </div><!--row-->
+
+      </div><!--donate amount inner-->
+    </div><!--col-lg-12-->
+  </div><!--row-->
+</div><!--donate-->
+{% endblock %}

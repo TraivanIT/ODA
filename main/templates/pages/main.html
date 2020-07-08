@@ -1,0 +1,207 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- css link text-uppercase -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css">
+
+    <!-- Font Awesome JS -->
+    <script src="https://kit.fontawesome.com/24eb073798.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style media="screen">
+
+    </style>
+  </head>
+  <body class="wrapper">
+    {% url 'home' as home %}
+    {% url 'kidsdream' as kidsdream %}
+    {% url 'wishlist' as wishlist %}
+    {% url 'donate' as donate %}
+    {% url 'contact' as contact %}
+    {% url 'getinvoled' as getinvoled %}
+    {% url 'aboutus' as aboutus %}
+
+    <div class="container">
+      <!--start top header-->
+      <div class="top-header bg-white">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-12">
+            <div class="logo-inner mr-auto">
+              <img src="{% static 'images/oda-logo.jpg'%}" alt="">
+            </div>
+          </div><!--lg-6-->
+          <div class="col-lg-6 col-md-6 col-12 ">
+            <div class="links-top-header-inner pt-4 d-flex justify-content-end">
+
+              <div class="links">
+                <p class="text-muted">You can help us by go..</p>
+                <a href="{%url 'donate'%}" class="btn btn-info " role="button" aria-pressed="true">Donate</a>
+                <a href="#" class="btn btn-warning " role="button" aria-pressed="true">ODA Painting Store</a>
+              </div>
+
+            </div>
+          </div><!--lg-6-->
+        </div><!--row-->
+      </div><!--to-header-->
+      <!--end top header-->
+
+      <!--start top nav-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mt-1">
+        <a class="navbar-brand d-none" href="#">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto ">
+            <li class="nav-item">
+              <a class="nav-link text-uppercase {%if request.path == home%} active {%endif%}" href="{% url 'home'%}">home</a>
+            </li>
+
+            <li class="nav-item ml-2">
+              <a class="nav-link text-uppercase {%if request.path == kidsdream%} active {%endif%}" href="{% url 'kidsdream' %}">Kids Dream</a>
+            </li>
+
+            <li class="nav-item ml-2">
+              <a class="nav-link text-uppercase {%if request.path == wishlist%} active {%endif%}" href="{% url 'wishlist'%}">wish list</a>
+            </li>
+
+            <li class="nav-item ml-2">
+              <a class="nav-link text-uppercase {%if request.path == donate%} active {%endif%}" href=" {% url 'donate'%}">Donate</a>
+            </li>
+
+            <li class="nav-item ml-2">
+              <a class="nav-link text-uppercase {%if request.path == contact%} active {%endif%}" href="{% url 'contact'%}">contact</a>
+            </li>
+
+            <li class="nav-item ml-2 dropdown">
+              <a class="nav-link text-uppercase dropdown-toggle {%if request.path == aboutus%} active {%endif%}" href="{% url 'aboutus' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About Us
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item " href="{% url 'aboutus'%}">about oda </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">oda free english schools</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Registration & Financial Responsibily</a>
+              </div>
+            </li>
+
+            <li class="nav-item  ml-2 dropdown">
+              <a class="nav-link text-uppercase dropdown-toggle {%if request.path == getinvoled%} active {%endif%}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                get Involed
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'getinvoled'%}">schools uniform fund</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">another.</a>
+              </div>
+            </li>
+
+
+
+          </ul>
+
+          <ul class="navbar-nav ml-auto ">
+            <li class="nav-item ">
+              <a class="nav-link " href=" ">Sign Up</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link " href=" ">Login</a>
+            </li>
+          </ul>
+
+        </div>
+      </nav>
+      <!--start top nav-->
+
+
+
+     {% block content%}
+
+
+     {% endblock %}
+
+
+
+   </div><!--container-->
+   <footer class="mt-2">
+     <div class="footer-top">
+     <div class="container">
+       <div class="row">
+         <div class="col-lg-3 col-md-4 col-12 segment-one md-mb-30 sm-mb-30 ">
+           <h4>ODA</h4>
+          <p>ODA Opportunities of Development thru Art is a grass roots
+             Registered Education NGO (Non-Governmental Organisation), formally established by Leng Touch in 2003.</p>
+         </div><!--col-lg-3-->
+
+         <div class="col-lg-3 col-md-4 col-12 segment-two md-mb-30 sm-mb-30">
+           <h4>Find more..</h4>
+           <ul>
+             <li>
+               <a href="#">Home</a>
+             </li>
+             <li>
+               <a href="#">School</a>
+             </li>
+             <li>
+               <a href="#">Event</a>
+             </li>
+             <li>
+               <a href="#">Volunteering</a>
+             </li>
+             <li>
+               <a href="#">Contant</a>
+             </li>
+
+           </ul>
+         </div><!--col-lg-3-->
+
+         <div class="col-lg-3 col-md-4 col-12 segment-three sm-mb-30">
+           <h4>Follow Us</h4>
+           <p>Please Follow us on our Social Media Profile in order to keep i updated.</p>
+           <a href="https://web.facebook.com/ODA-Art-and-Education-Opportunities-Cambodia-179215388759998/" target="_blank"><i class="fa fa-facebook"></i></a>
+           <a href="#"><i class="fa fa-twitter" target="_blank"></i></a>
+           <a href="#"><i class="fa fa-youtube" target="_blank"></i></a>
+         </div><!--col-lg-3-->
+
+         <div class=" col-lg-3 col-md-4 segment-four sm-mb-30 ">
+           <h4>Our Newsletter</h4>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+             sed do eiusmod tempor incididunt ut l</p>
+             <form>
+               <div class="input-group mb-3">
+                  <input type="email" class="form-control" placeholder="Email" aria-label="Recipient's username" aria-describedby="button-addon2">
+                  <div class="input-group-append">
+                    <button class="btn btn-warning" type="submit" id="button-addon2">Subscribe</button>
+                  </div>
+                </div>
+             </form>
+         </div><!--col-lg-3-->
+
+       </div><!--row-->
+     </div><!--container-->
+   </div><!--footer top-->
+   <div class="footer-bottom-text">
+     <span class="text-white text-footer">All Right reserverd by &copy; ODA.{%now 'Y'%}</span>
+   </div>
+   </footer>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

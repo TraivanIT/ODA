@@ -1,0 +1,52 @@
+{% extends 'pages/main.html'%}
+{% load static %}
+{% block content%}
+<!--carousel -->
+<div id="carouselExampleCaptions" class="carousel slide mt-1" data-ride="carousel">
+  <ol class="carousel-indicators">
+    {%for slider in kids_sliders %}
+
+      <li data-target="#carouselExampleCaptions" data-slide-to="{{forloop.counter0 }}" class="{%if slider.id == 1 %} active {%endif%} "></li>
+
+    {%endfor%}
+
+  </ol>
+  <div class="carousel-inner">
+    {%for slider in kids_sliders %}
+    <div class="carousel-item {%if slider.id == 1 %} active {%endif%}">
+      <div class="img d-flex justify-content-center">
+        <img src="{{slider.kids_dream.imageURL}}" class="d-block" height="500px"  alt="...">
+      </div>
+      <div class="carousel-caption d-none d-md-block">
+        <div class="p-inner h6">
+          {{slider.kids_dream_text_slider|safe}}
+        </div><!--p-inner-->
+      </div>
+    </div>
+    {%endfor%}
+
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<!--end of carousel-->
+
+<!--kidsdream text-->
+<div class="kidsdream mt-2">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-12">
+      <div class="text-inner hadow-sm rounded p-5 bg-white">
+        {% for kids_text in kids_texts%}
+          {{kids_text.kids_dream_text|safe}}
+        {% endfor%}
+      </div>
+    </div><!--col-12-->
+  </div><!--row-->
+</div><!--end kidsdream-->
+{% endblock %}
